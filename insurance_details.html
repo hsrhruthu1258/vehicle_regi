@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insurance Details Entry | RVDMS</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: linear-gradient(135deg, #e0f2fe, #f3f4f6);
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #0b69ff;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      font-size: 24px;
+      font-weight: bold;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #0b69ff;
+      margin-bottom: 25px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    input[type="text"], input[type="date"], input[type="number"], input[type="email"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      font-size: 15px;
+    }
+
+    .status {
+      font-weight: bold;
+      padding: 10px;
+      border-radius: 8px;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    .expired {
+      background-color: #ffebee;
+      color: #c62828;
+      border: 1px solid #c62828;
+    }
+
+    .active {
+      background-color: #e8f5e9;
+      color: #2e7d32;
+      border: 1px solid #2e7d32;
+    }
+
+    button, .btn {
+      background-color: #0b69ff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+      margin: 5px;
+    }
+
+    button:hover, .btn:hover {
+      background-color: #004aad;
+    }
+
+    .btn-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    🧾 Insurance Details Entry
+  </header>
+
+  <div class="container">
+    <h2>Enter Insurance Information</h2>
+
+    <form id="insuranceForm">
+      <label for="policyNo">Policy Number</label>
+      <input type="text" id="policyNo" name="policyNo" placeholder="Enter Policy Number" required>
+
+      <label for="regNo">Vehicle Registration Number</label>
+      <input type="text" id="regNo" name="regNo" placeholder="Enter Vehicle Registration Number" required>
+
+      <label for="provider">Insurance Provider</label>
+      <input type="text" id="provider" name="provider" placeholder="Enter Provider Name" required>
+
+      <label for="issueDate">Issue Date</label>
+      <input type="date" id="issueDate" name="issueDate" required>
+
+      <label for="expiryDate">Expiry Date</label>
+      <input type="date" id="expiryDate" name="expiryDate" required onchange="checkExpiry()">
+
+      <div id="statusBox" class="status"></div>
+
+      <label for="premium">Premium Amount (₹)</label>
+      <input type="number" id="premium" name="premium" placeholder="Enter Premium Amount" required>
+
+      <label for="contact">Contact Number</label>
+      <input type="text" id="contact" name="contact" placeholder="Enter Contact Number" required>
+
+      <div class="btn-container">
+        <button type="submit">Submit</button>
+        <a href="registration_menu.html" class="btn">⬅ Back to Registration Menu</a>
+        <a href="menu.html" class="btn">🏠 Back to Main Menu</a>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    function checkExpiry() {
+      const expiryInput = document.getElementById('expiryDate');
+      const statusBox = document.getElementById('statusBox');
+      const expiryDate = new Date(expiryInput.value);
+      const today = new Date();
+
+      if (!expiryInput.value) {
+        statusBox.textContent = "";
+        statusBox.className = "status";
+        return;
+      }
+
+      if (expiryDate < today) {
+        statusBox.textContent = "❌ This insurance policy is EXPIRED";
+        statusBox.className = "status expired";
+      } else {
+        statusBox.textContent = "✅ This insurance policy is ACTIVE";
+        statusBox.className = "status active";
+      }
+    }
+
+    // Check expiry automatically if already entered
+    document.addEventListener('DOMContentLoaded', checkExpiry);
+  </script>
+
+</body>
+</html>

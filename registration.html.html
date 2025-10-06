@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vehicle Details</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f1f5f9;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      width: 60%;
+      margin: 40px auto;
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input, select {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 15px;
+    }
+
+    button {
+      background-color: #007bff;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Vehicle Details</h2>
+    <form action="vehicle_details.php" method="POST">
+      <label for="owner_name">Owner Name:</label>
+      <input type="text" id="owner_name" name="owner_name" required>
+
+      <label for="vehicle_number">Vehicle Number:</label>
+      <input type="text" id="vehicle_number" name="vehicle_number" required>
+
+      <label for="vehicle_type">Vehicle Type:</label>
+      <select id="vehicle_type" name="vehicle_type" required>
+        <option value="">--Select Type--</option>
+        <option value="Car">Car</option>
+        <option value="Bike">Bike</option>
+        <option value="Truck">Truck</option>
+        <option value="Bus">Bus</option>
+      </select>
+
+      <label for="model">Model:</label>
+      <input type="text" id="model" name="model" required>
+
+      <label for="company">Company:</label>
+      <input type="text" id="company" name="company" required>
+
+      <label for="chassis_no">Chassis Number:</label>
+      <input type="text" id="chassis_no" name="chassis_no" required>
+
+      <label for="engine_no">Engine Number:</label>
+      <input type="text" id="engine_no" name="engine_no" required>
+
+      <label for="reg_date">Registration Date:</label>
+      <input type="date" id="reg_date" name="reg_date" required>
+
+      <button type="submit">Save Vehicle Details</button>
+    </form>
+  </div>
+
+</body>
+</html>

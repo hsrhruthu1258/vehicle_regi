@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Vehicle & Insurance | RVDMS</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: linear-gradient(135deg, #e3f2fd, #f9f9f9);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #0288d1;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      font-size: 24px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    .container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: start;
+      padding: 40px 20px;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    .tab-btn {
+      background-color: #e1f5fe;
+      border: 2px solid #0288d1;
+      color: #0288d1;
+      padding: 10px 25px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    .tab-btn.active,
+    .tab-btn:hover {
+      background-color: #0288d1;
+      color: white;
+    }
+
+    .search-box {
+      background-color: white;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 450px;
+      padding: 25px;
+      text-align: center;
+      display: none;
+    }
+
+    .search-box.active {
+      display: block;
+    }
+
+    input[type="text"] {
+      width: 90%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 15px;
+    }
+
+    button {
+      background-color: #0288d1;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 15px;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #01579b;
+    }
+
+    .result-box {
+      margin-top: 20px;
+      background-color: #f1f8e9;
+      padding: 15px;
+      border-radius: 10px;
+      text-align: left;
+      display: none;
+      width: 90%;
+      max-width: 450px;
+    }
+
+    footer {
+      background-color: #f1f1f1;
+      text-align: center;
+      padding: 10px 0;
+      color: #555;
+      font-size: 14px;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 30px;
+      text-decoration: none;
+      background-color: #0288d1;
+      color: white;
+      padding: 10px 25px;
+      border-radius: 25px;
+      transition: 0.3s;
+    }
+
+    .back-btn:hover {
+      background-color: #01579b;
+    }
+  </style>
+</head>
+<body>
+
+  <header>🔎 Search Vehicle & Insurance</header>
+
+  <div class="container">
+    <div class="tabs">
+      <button class="tab-btn active" onclick="showTab('vehicle')">Vehicle Details</button>
+      <button class="tab-btn" onclick="showTab('insurance')">Insurance Details</button>
+    </div>
+
+    <!-- VEHICLE SEARCH -->
+    <div id="vehicle" class="search-box active">
+      <h2>Search Vehicle Details</h2>
+      <input type="text" id="vehicleSearch" placeholder="Enter VIN or Registration Number">
+      <button onclick="searchVehicle()">Search</button>
+
+      <div id="vehicleResult" class="result-box"></div>
+    </div>
+
+    <!-- INSURANCE SEARCH -->
+    <div id="insurance" class="search-box">
+      <h2>Search Insurance Details</h2>
+      <input type="text" id="insuranceSearch" placeholder="Enter Registration Number">
+      <button onclick="searchInsurance()">Search</button>
+
+      <div id="insuranceResult" class="result-box"></div>
+    </div>
+
+    <a href="search.html" class="back-btn">⬅ Back</a>
+  </div>
+
+  <footer>
+    &copy; 2025 Regional Vehicle Database Management System (RVDMS)
+  </footer>
+
+  <script>
+    // Switch Tabs
+    function showTab(tabName) {
+      document.querySelectorAll(".tab-btn").forEach(btn => btn.classList.remove("active"));
+      document.querySelectorAll(".search-box").forEach(box => box.classList.remove("active"));
+
+      event.target.classList.add("active");
+      document.getElementById(tabName).classList.add("active");
+    }
+
+    // Dummy Search Function for Demo
+    function searchVehicle() {
+      const input = document.getElementById("vehicleSearch").value.trim();
+      const resultBox = document.getElementById("vehicleResult");
+
+      if (input === "") {
+        resultBox.innerHTML = "<p style='color:red;'>⚠ Please enter VIN or Registration Number.</p>";
+      } else {
+        // Example static data
+        resultBox.innerHTML = `
+          <strong>Vehicle Details Found:</strong><br><br>
+          <b>Owner:</b> John Doe<br>
+          <b>VIN:</b> ${input}<br>
+          <b>Model:</b> Honda Civic<br>
+          <b>Year:</b> 2023<br>
+          <b>Color:</b> Blue<br>
+          <b>Registration No:</b> TN-09-AB-1234
+        `;
+      }
+      resultBox.style.display = "block";
+    }
+
+    function searchInsurance() {
+      const input = document.getElementById("insuranceSearch").value.trim();
+      const resultBox = document.getElementById("insuranceResult");
+
+      if (input === "") {
+        resultBox.innerHTML = "<p style='color:red;'>⚠ Please enter Registration Number.</p>";
+      } else {
+        // Example static data
+        resultBox.innerHTML = `
+          <strong>Insurance Details Found:</strong><br><br>
+          <b>Registration No:</b> ${input}<br>
+          <b>Insurance Company:</b> ICICI Lombard<br>
+          <b>Policy No:</b> INS1234567<br>
+          <b>Valid Till:</b> 15-Oct-2025<br>
+          <b>Status:</b> ✅ Active
+        `;
+      }
+      resultBox.style.display = "block";
+    }
+  </script>
+
+</body>
+</html>

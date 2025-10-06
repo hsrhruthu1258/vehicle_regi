@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vehicle Details Entry | RVDMS</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: linear-gradient(135deg, #dbeafe, #f3f4f6);
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #004aad;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      font-size: 24px;
+      font-weight: bold;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #004aad;
+      margin-bottom: 25px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    input[type="text"], input[type="date"], input[type="number"], input[type="email"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      font-size: 15px;
+    }
+
+    button, .btn {
+      background-color: #004aad;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+      margin: 5px;
+    }
+
+    button:hover, .btn:hover {
+      background-color: #003580;
+    }
+
+    .btn-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    🚗 Vehicle Details Entry
+  </header>
+
+  <div class="container">
+    <h2>Enter Vehicle Information</h2>
+
+    <form action="#" method="post">
+      <label for="regNo">Registration Number</label>
+      <input type="text" id="regNo" name="regNo" placeholder="Enter Registration Number" required>
+
+      <label for="vin">VIN (Vehicle Identification Number)</label>
+      <input type="text" id="vin" name="vin" placeholder="Enter Vehicle VIN" required>
+
+      <label for="owner">Owner Name</label>
+      <input type="text" id="owner" name="owner" placeholder="Enter Owner's Name" required>
+
+      <label for="provider">Provider Name</label>
+      <input type="text" id="provider" name="provider" placeholder="Enter Provider Name" required>
+
+      <label for="validFrom">Valid From</label>
+      <input type="date" id="validFrom" name="validFrom" required>
+
+      <label for="color">Color</label>
+      <input type="text" id="color" name="color" placeholder="Enter Vehicle Color" required>
+
+      <label for="contact">Contact Number</label>
+      <input type="text" id="contact" name="contact" placeholder="Enter Contact Number" required>
+
+      <div class="btn-container">
+        <button type="submit">Submit</button>
+        <a href="registration_menu.html" class="btn">⬅ Back to Registration Menu</a>
+        <a href="menu.html" class="btn">🏠 Back to Main Menu</a>
+      </div>
+    </form>
+  </div>
+
+</body>
+</html>

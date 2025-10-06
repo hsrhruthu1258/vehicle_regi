@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RVDMS Menu</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: linear-gradient(135deg, #e0f2ff, #ffffff);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #004aad;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      font-size: 24px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    .container {
+      flex: 1;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      padding: 40px 20px;
+    }
+
+    .card {
+      background-color: white;
+      width: 280px;
+      height: 200px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      text-align: center;
+      padding: 30px 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      text-decoration: none;
+      color: #004aad;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .card h2 {
+      font-size: 22px;
+      margin-bottom: 10px;
+      color: #004aad;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: #666;
+    }
+
+    footer {
+      background-color: #f1f1f1;
+      text-align: center;
+      padding: 10px 0;
+      color: #555;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .card {
+        width: 80%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    🚗 RVDMS Main Menu
+  </header>
+
+  <div class="container">
+    <!-- Registration -->
+    <a href="registration_menu.html" class="card">
+      <h2>Registration</h2>
+      <p>Register a vehicle or its insurance details.</p>
+    </a>
+
+    <!-- Search -->
+    <a href="search.html" class="card">
+      <h2>Search</h2>
+      <p>Search vehicle or insurance details easily.</p>
+    </a>
+
+    <!-- Other -->
+    <a href="others.html" class="card">
+      <h2>Other</h2>
+      <p>Access additional system features like violations.</p>
+    </a>
+  </div>
+
+  <footer>
+    &copy; 2025 Regional Vehicle Database Management System (RVDMS)
+  </footer>
+
+</body>
+</html>

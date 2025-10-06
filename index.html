@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Login - Auto-Register</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f4f6f9;
+            font-family: 'Roboto', sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .login-card {
+            width: 100%;
+            max-width: 400px;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .login-card img {
+            max-width: 120px;
+            margin-bottom: 20px;
+        }
+        .btn-primary {
+            background-color: #007BFF;
+            border: none;
+        }
+        .form-control:focus {
+            box-shadow: 0 0 5px rgba(0,123,255,0.5);
+            border-color: #007BFF;
+        }
+        .forgot-password {
+            font-size: 0.9rem;
+            text-decoration: none;
+            color: #007BFF;
+        }
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-card">
+        <!-- Logo Image -->
+        <img src="https://uploads.onecompiler.io/43wm7gg9s/43wm7eswt/WhatsApp%20Image%202025-09-13%20at%209.11.46%20PM.jpeg" alt="Auto-Register Logo">
+        
+        <h3 class="mb-4">Login to Auto-Register</h3>
+        
+        <form action="menu.html">
+            <div class="mb-3 text-start">
+                <label for="username" class="form-label">Username or Email</label>
+                <input type="text" class="form-control rounded-pill" id="username" placeholder="Enter username or email" required>
+            </div>
+            <div class="mb-3 text-start">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control rounded-pill" id="password" placeholder="Enter password" required>
+            </div>
+            <div class="mb-3 form-check text-start">
+                <input type="checkbox" class="form-check-input" id="rememberMe">
+                <label class="form-check-label" for="rememberMe">Remember me</label>
+            </div>
+            <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-primary btn-block rounded-pill">Login</button>
+            </div>
+            <div class="text-center mt-3">
+                <a href="#" class="forgot-password">Forgot Password?</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
